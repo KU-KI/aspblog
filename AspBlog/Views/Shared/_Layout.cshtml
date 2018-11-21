@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+    <meta property="og:title" content="Blog">
+    <meta property="og:image" content="~/images/favicon.ico">
+    <meta property="og:description" content="Blog na voľnú tému. Zaregistrujte sa a pridajte akýkoľvek príspevok.">
+
+    <meta name="description" content="">
+    <meta name="author" content="František Gič">
+
+    <link rel="stylesheet" href="~/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+
+    <link rel="apple-touch-icon" href="~/images/favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="~/images/favicon.ico" />
+
+    <title>@ViewData["Title"] / Blog</title>
+
+</head>
+<body class="">
+
+    <header class="container mt-0 mt-sm-5">
+        <partial name="_Navigation" />
+    </header>
+
+    <main>
+        <div class="container">
+            @RenderBody()
+        </div>
+    </main>
+
+    <footer class="site-footer container small my-3">
+        <strong>&copy;&nbsp;@DateTime.Now.Year</strong>
+        <a href="https://www.frantisekgic.sk" class="text-muted">www.frantisekgic.sk</a>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/script.js"></script>
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

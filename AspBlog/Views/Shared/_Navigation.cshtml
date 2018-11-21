@@ -1,0 +1,83 @@
+﻿@using Microsoft.AspNetCore.Identity;
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="navbar navigation p-0 d-none d-md-inline-flex w-100 ">
+        <div class="btn-group btn-group-sm">
+            <a href="/" class="btn btn-default">Všetky príspevky</a>
+            <a href="/post/create" class="btn btn-default">Vytvoriť príspevok</a>
+        </div>
+        <div class="btn-group btn-group-sm justify-content-end">
+            <div class="btn bg-primary small drop-down bg-primary">
+                @UserManager.GetUserName(User)
+                <ul class="username small">
+                    <li><a href="/profile">Môj profil</a></li>
+                    <li><a href="/myposts">Moje príspevky</a></li>
+                </ul>
+            </div>
+            <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
+                <button type="submit" class="btn btn-sm btn-default logout">Odhlásiť sa</button>
+            </form>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark mt-3 bg-primary d-md-none">
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav text-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Všetky príspevky</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/post/create" class="nav-link">Vytvoriť príspevok</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/profile">Môj profil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/myposts">Moje príspevky</a>
+                </li>
+                <li class="nav-item">
+                    <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
+                        <input type="submit" class="nav-link logout-link d-inline" value="Odhlásiť sa">
+                    </form>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+}
+else
+{
+    <div class="navigation p-0 d-none d-md-inline-flex w-100">
+        <div class="btn-group btn-group-sm flex-fill justify-content-end">
+            <a class="btn btn-default" asp-area="Identity" asp-page="/Account/Login">Prihlásiť sa</a>
+            <a class="btn btn-primary" asp-area="Identity" asp-page="/Account/Register">Registrovať sa</a>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark mt-3 bg-primary d-md-none">
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav text-center">
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Prihlásiť sa</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="Identity" asp-page="/Account/Register">Registrovať sa</a>
+
+                </li>
+
+            </ul>
+        </div>
+
+    </nav>
+}

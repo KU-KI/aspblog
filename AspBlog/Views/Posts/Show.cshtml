@@ -1,0 +1,48 @@
+﻿@using Microsoft.AspNetCore.Identity;
+
+@model AspBlog.Models.Post
+
+@inject UserManager<IdentityUser> UserManager
+
+
+@{
+    var authorEmail = UserManager.FindByIdAsync(Model.User_id).Result.Email;
+    ViewData["Title"] = Model.Title;
+}
+
+<section class="box p-4">
+    <article class="post full-post">
+
+        <header class="post-header">
+            <h1 class="box-heading pb-3">
+                <a href="/post/@Model.Slug">
+                    @Model.Title
+                </a>
+
+                @if (Model.User_id.Equals(UserManager.GetUserId(User)))
+                {
+                    <div class="d-block d-md-inline">
+                        <a href="/post/@Model.Slug/edit" class="btn btn-xs edit-link">Upraviť</a>
+                        <a href="/post/@Model.Slug/delete" class="btn btn-xs edit-link">&times;</a>
+                    </div>
+                }
+
+                <time datetime="@Model.Created_at">
+                    <small> @(Model.Created_at.ToString("dd. MMMM yyyy HH:mm"))</small>
+                </time>
+            </h1>
+        </header>
+
+        <div class="post-content pt-2">
+            @Model.Text
+
+            <p class="written-by small mt-2">
+                <small>
+                    - napísal
+                    <a href="/user/@authorEmail">@authorEmail</a>
+                </small>
+            </p>
+        </div>
+
+    </article>
+</section>

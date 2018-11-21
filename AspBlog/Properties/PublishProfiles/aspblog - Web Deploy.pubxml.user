@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA+0P0JP0BhEObWsVRE2aRHQAAAAACAAAAAAAQZgAAAAEAACAAAAB4cnolJNOSONpvut5/81QE4avOsNz2EHgtp3gKxdm2KgAAAAAOgAAAAAIAACAAAAD369ShMN4u+g1ZNgoYhf2Lc24vi4aMg1XzjxcM9nwfYoAAAAACKdIkGDFsFeXzBRBUTs5j7SQEwl3A0cRV3SgF+Drsnt5kVnfeu3V9HCtXEr4DhDYkEeBOXZoXcZAnvyF0/B/DpTCbaJ4bKblTlNDUOscfCO7CJ4w2D7XgCPi+rsTgQQSdWImEcGhnMYG/KudXs/H3KO8Dqfp3A1rPs/c2CboMsUAAAAA3QrUv9FfGxKTwG3TswS8BA3ZwpjQtJL61/h9oc7hfDMRTmJwK3g5YnagK1mVFR+f3pCFgv+Dt4hbCI++NM6iW</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:aspblogdbserver.database.windows.net,1433%3bInitial Catalog=aspblog_db%3bUser Id=freddie777%40aspblogdbserver%3bPassword=Franto2661</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="AspBlog.Data.ApplicationDbContext">
+      <Value>Data Source=tcp:aspblogdbserver.database.windows.net,1433%3bInitial Catalog=aspblog_db%3bUser Id=freddie777%40aspblogdbserver%3bPassword=Franto2661</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,30 @@
+﻿@model AspBlog.Models.Post
+
+@{
+    ViewData["Title"] = "Vymazať príspevok";
+}
+
+<section class="box p-4">
+
+    <header class="post-list ">
+        <h1 class="box-heading text-muted pb-3">
+            Určite chcete vykonať túto akciu?
+        </h1>
+    </header>
+
+    <blockquote class="form-group mt-3 bg-light p-3">
+        <h3 class="text-primary">&ldquo;@Model.Title&rdquo;</h3>
+        <p class="teaser">@Model.Teaser</p>
+    </blockquote>
+
+    <form asp-action="Delete">
+        <div class="form-group">
+            <input type="hidden" asp-for="Slug" />
+            <button type="submit" class="btn btn-primary">Odstrániť</button>
+            <span class="or">
+                alebo <a href="/">späť domov</a>
+            </span>
+        </div>
+    </form>
+
+</section>

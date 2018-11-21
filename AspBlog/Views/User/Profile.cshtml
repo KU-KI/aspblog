@@ -1,0 +1,60 @@
+﻿@using Microsoft.AspNetCore.Identity;
+
+@model IdentityUser;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Môj profil";
+
+}
+
+<section class="box p-4">
+    <article class="post full-post clearfix">
+
+        <header class="post-list">
+            <h1 class="box-heading  pb-3 text-muted">
+                @ViewData["Title"]
+            </h1>
+        </header>
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <form id="change-password-form" method="post" action="">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" value="@Model.UserName" class="form-control" disabled />
+
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Zmena hesla:</label>
+                        <input type="password" name="oldpassword" required placeholder="Staré heslo" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" name="password" required placeholder="Nové heslo" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" name="password_confirm" required class="form-control" placeholder="Zopakujte heslo" />
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Zmeniť heslo</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </article>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+

@@ -1,0 +1,40 @@
+﻿@model AspBlog.Models.Post
+
+@{
+    ViewData["Title"] = "Upraviť príspevok";
+
+}
+<section class="box p-4">
+
+    <form asp-action="Edit" class="post" id="edit-form">
+
+        <header class="post-list pb-3">
+            <h1 class="box-heading text-muted">@ViewData["Title"]</h1>
+        </header>
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" name="Id" value="@Model.Id" />
+
+        <div class="form-group">
+            <span asp-validation-for="Title" class="text-danger"></span>
+            <input asp-for="Title" type="text" name="title" class="form-control" placeholder="Nadpis príspevku" />
+        </div>
+
+        <div class="form-group">
+            <span asp-validation-for="Text" class="text-danger"></span>
+            <textarea asp-for="Text" name="text" class="form-control" placeholder="Text príspevku..." rows="16"></textarea>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Upraviť</button>
+
+            <span class="or">
+                alebo <a href="/">späť domov</a>
+            </span>
+
+        </div>
+
+    </form>
+
+</section>
+

@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\Users\FERI\Synology Shared Folders\3.Bc KU\Webdesign 3\Programs\AspBlog\AspBlog\obj\Release\netcoreapp2.1\PubTmp\Out\" />
+  <dbfullsql path="C:\Users\FERI\Synology Shared Folders\3.Bc KU\Webdesign 3\Programs\AspBlog\AspBlog\obj\Release\netcoreapp2.1\PubTmp\EFSQLScripts\AspBlog.Data.ApplicationDbContext.sql" />
+</sitemanifest>

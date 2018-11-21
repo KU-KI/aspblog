@@ -1,0 +1,40 @@
+﻿@model IEnumerable<AspBlog.Models.Post>
+
+<section class="box post-list p-4">
+    <h1 class="box-heading text-muted pb-3">
+        @ViewData["Heading"]
+    </h1>
+
+    @foreach (var item in Model)
+    {
+        <article id="post-@item.Id" class="post mt-4">
+            <header class="post-header">
+                <h2>
+                    <a href="/post/@item.Slug">
+                        @item.Title
+                    </a>
+                    <time datetime="@item.Created_at">
+                        <small>/ @item.PrettyDate</small>
+                    </time>
+                </h2>
+            </header>
+
+            <div class="post-content">
+                <p>
+                    @item.Teaser
+                </p>
+            </div>
+
+            <footer class="post-footer">
+                <a href="/post/@item.Slug" class="read-more">čítať viac</a>
+            </footer>
+        </article>
+    }
+
+    @if (!(Model.ToArray().Length > 0))
+    {
+        <p>Ospravedľňujeme, ale nenašli sme žiadny príspevok.</p>
+    }
+
+
+</section>

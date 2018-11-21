@@ -1,0 +1,208 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #273646;
+    color: #fff;
+}
+
+pre {
+    white-space: pre-line;
+}
+
+.box {
+    color: #292931;
+    background: #FFFEFF;
+}
+
+label.checkbox {
+    display: block;
+}
+
+.logout-link {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* GENERAL */
+
+.post-list .box-heading,
+.full-post .box-heading a {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+time small {
+    color: #CAC9CA;
+    white-space: nowrap;
+}
+
+.post-content {
+    color: #273548;
+}
+
+.navbar .btn {
+    border-radius: 0;
+}
+
+/* POST LIST */
+
+h1 header.post-header,
+.box-heading {
+    border-bottom: 1px dashed #DEDDDE;
+}
+
+.post-list p {
+    color: #273548;
+}
+
+/* SINGLE POST */
+
+.full-post .post-content {
+    border-bottom: 1px dashed #DEDDDE;
+}
+
+.full-post .box-heading a {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.full-post time {
+    display: block;
+}
+
+.full-post .edit-link {
+    font-weight: 300;
+    font-size: 13px;
+    color: #292931;
+}
+
+    .full-post .edit-link:hover {
+        text-decoration: none;
+    }
+
+.full-post .written-by {
+    color: #CAC9CA;
+    font-size: 15px;
+}
+
+/* LOGIN FORM, REGISTER FORM, ADD NEW FORM */
+
+form {
+    color: #292931;
+}
+
+    form .box-heading {
+        text-transform: uppercase;
+        font-weight: 300;
+        border: none;
+    }
+
+.form-control {
+    background: #DCE3EB;
+    border: 1px solid #D1D1D7;
+}
+
+    .form-control::placeholder {
+        color: #A4A7AC;
+    }
+
+
+/* LOGIN FORM */
+
+.box-auth .checkbox {
+    display: inline-block;
+    position: relative;
+    bottom: 3px;
+}
+
+.box-auth-heading {
+    text-align: left;
+}
+
+.box-auth .form-control {
+    background: #FFFEFF;
+    border: none !important;
+    border-bottom: #F1F4FF;
+}
+
+.box-auth label {
+    font-weight: 400;
+}
+
+/* EDIT POST */
+
+.or {
+    margin: 0 5px;
+}
+
+
+/* dropdown menu */
+
+.drop-down {
+    position: relative;
+}
+
+    .drop-down:hover ul {
+        display: block;
+        float: none;
+    }
+
+    .drop-down ul {
+        display: none;
+        position: absolute;
+        top: 28px;
+        left: 0;
+        width: 100%;
+        list-style: none;
+        padding: 0;
+        border: 1px solid #4a5561;
+        border-top: none;
+    }
+
+        .drop-down ul li {
+            display: block;
+            width: 100%;
+        }
+
+            .drop-down ul li a {
+                z-index: 99;
+                display: block;
+                background: #515D6B;
+                color: #fff;
+                padding: 5px;
+                font-size: 100%;
+            }
+
+
+.site-footer {
+    text-align: center;
+    font-size: 14px;
+}
+
+    .site-footer a:last-child {
+        margin-left: 5px;
+    }
+
+@media screen and (min-width:768px) {
+    .navbar-right {
+        margin-right: 0;
+    }
+
+    .full-post .edit-link {
+        margin-bottom: 5px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .navbar .btn {
+        font-size: 11px;
+    }
+
+    .box-heading {
+        font-size: 1.90rem;
+    }
+}

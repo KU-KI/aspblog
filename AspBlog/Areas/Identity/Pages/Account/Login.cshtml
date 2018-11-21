@@ -1,0 +1,40 @@
+﻿@page
+@model LoginModel
+
+@{
+    Layout = "/Views/Shared/_LayoutNoNav.cshtml";
+    ViewData["Title"] = "Prihlásiť sa";
+}
+
+<div class="row justify-content-center mt-5 mb-4">
+    <div class="col-sm-8 col-md-5">
+
+        <form method="post" class="box box-auth px-4 py-5">
+
+            <h2 class="box-auth-heading pb-3">@ViewData["Title"]</h2>
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <input asp-for="Input.Email" class="form-control" placeholder="E-mailová adresa" autofocus required />
+            <span asp-validation-for="Input.Email" class="text-danger"></span>
+
+            <input asp-for="Input.Password" class="form-control mt-2" placeholder="Heslo" required />
+            <span asp-validation-for="Input.Password" class="text-danger"></span>
+
+            <input asp-for="Input.RememberMe" id="remember" checked>
+
+            <label asp-for="Input.RememberMe" class="checkbox mt-3">Zapamatať si ma</label>
+
+            <button type="submit" class="btn btn-lg btn-primary btn-block mt-4">@ViewData["Title"]</button>
+
+            <p class="alt-action text-center mt-3">
+                Nemáte ešte účet? <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Vytvorte si ho.</a>
+            </p>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
